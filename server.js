@@ -27,11 +27,11 @@ app.get("/api/notes", function(req, res) {
 
 app.post("/api/notes", function(req, res) {
     var newNote = req.body;
-    var notes = fs.readFileSync("./db/db.json");
+    var note = fs.readFileSync("./db/db.json");
     newNote.id = String(note.length);
     note = JSON.parse(note);
     note.push(newNote);
-    fs.writeFileSync("./db/db.json",JSON.stringify(notes));
+    fs.writeFileSync("./db/db.json",JSON.stringify(note));
     res.json(note);
 })
 
