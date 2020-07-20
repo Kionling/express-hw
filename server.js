@@ -25,7 +25,7 @@ app.get("/api/notes", function(req, res) {
     res.sendFile(path.join(__dirname, "/public/index.html"));
 });
 
-app.post("api/notes/", function(req, res) {
+app.post("api/notes", function(req, res) {
     var newNote = req.body;
     var notes = fs.readFileSync("./db/db.json");
     newNote.id = String(note.length);
