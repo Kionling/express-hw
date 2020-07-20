@@ -39,15 +39,15 @@ app.delete("/api/notes/:id", function(req, res){
     var noteID = req.params.id;
     note = fs.readFileSync("./db/db.json");
     note = note.filter(function(notes){
-        if (noteID === notes.id){
+        if (noteID === note.id){
             return false;
         }
         else{
             return true;
         }
     })
-    fs.writeFileSync("./db/db.json", JSON.stringify(notes));
-    res.json(notes);
+    fs.writeFileSync("./db/db.json", JSON.stringify(note));
+    res.json(note);
 });
 
 
