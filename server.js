@@ -33,7 +33,7 @@ app.post("api/notes", function(req, res) {
     note.push(newNote);
     fs.writeFileSync("./db/db.json",JSON.stringify(notes));
     res.json(note);
-} )
+})
 
 
 
