@@ -35,6 +35,14 @@ app.post("api/notes", function(req, res) {
     res.json(note);
 })
 
+app.delete("/api/notes/:id", function(req, res){
+    var noteID = req.params.id;
+    note = fs.readFileSync("./db/db.json");
+    note = note.filter(function(notes){
+        
+    })
+})
+
 
 
 
