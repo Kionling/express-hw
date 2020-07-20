@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 4000;
 
 app.use(express.static(path.join(__dirname, "public")));
 
-require(path.join(__dirname, "routes/apiRoutes.js"))(app);
+// require(path.join(__dirname, "routes/apiRoutes.js"))(app);
 require(path.join(__dirname, "routes/htmlRoutes.js"))(app);
 
 app.listen(PORT, function() {
