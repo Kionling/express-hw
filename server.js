@@ -1,9 +1,9 @@
-const express = require("express");
-const path = require("path");
-const fs = require("fs");
+var express = require("express");
+var path = require("path");
+var fs = require("fs");
 
-const app = express();
-const PORT = process.env.PORT || 8000;
+var app = express();
+var PORT = process.env.PORT || 8000;
 
 
 app.use(express.urlencoded({ extended: true }));
@@ -25,7 +25,7 @@ app.get("/api/notes", function(req, res) {
     res.sendFile(path.join(__dirname, "/public/index.html"));
 });
 
-app.post("api/notes", function(req, res) {
+app.post("/api/notes", function(req, res) {
     var newNote = req.body;
     var notes = fs.readFileSync("./db/db.json");
     newNote.id = String(note.length);
@@ -49,13 +49,6 @@ app.delete("/api/notes/:id", function(req, res){
     fs.writeFileSync("./db/db.json", JSON.stringify(notes));
     res.json(notes);
 });
-
-
-
-
-
-
-
 
 
 
