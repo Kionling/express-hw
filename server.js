@@ -13,6 +13,9 @@ app.use(express.static("public"));
 //functions start here
 //also router mapping
 
+app.get("/notes", function(req, res) {
+    res.sendFile(path.join(__dirname, "/public/notes.html"));
+});
 
 
 
